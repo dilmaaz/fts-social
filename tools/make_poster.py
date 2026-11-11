@@ -12,7 +12,7 @@ spec.json:
    "dark": false,                                 # navy overlay + reverse logo
    "top": 360}                                    # optional headline baseline
 
-Contact details are fixed: WhatsApp +971 50 528 4597, www.getfixable.com.
+Contact details are fixed: WhatsApp +971 50 528 4597, www.ftselevators.com.
 """
 import json, os, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -21,7 +21,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W, H, BAR = 1080, 1350, 110
 NAVY, GOLD = (15, 31, 61), (201, 162, 74)
 PHONE = "+971 50 528 4597"
-SITE = "www.getfixable.com"
+SITE = "www.ftselevators.com"
 
 
 def font(name, size):
