@@ -10,7 +10,7 @@ GREEN = (0, 160, 56)
 RED = (223, 17, 26)
 WHITE = (255, 255, 255)
 GREY = (150, 165, 190)
-REPO = '/home/claude/fts-social'
+REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 FONTS = REPO + '/assets/fonts/'
 
 _fc = {}

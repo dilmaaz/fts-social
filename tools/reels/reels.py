@@ -1,3 +1,4 @@
+import os
 import sys, math
 from PIL import Image, ImageDraw
 from common import *
@@ -223,7 +224,9 @@ if __name__ == '__main__':
         for tt in [1.0, 5.0, 11.0, 14.0]:
             img = background(); fn(img, tt); img.save(f'/tmp/{name}_{tt}.png')
     else:
-        render(f'/home/claude/reels/out/{name}_v.mp4', DUR, fn)
-        music(f'/home/claude/reels/out/{name}.wav', DUR, seed=list(VIDEOS).index(name))
-        mux(f'/home/claude/reels/out/{name}_v.mp4', f'/home/claude/reels/out/{name}.wav', f'/home/claude/reels/out/FTS-reel-{name}.mp4')
+        tmp = '/tmp/fts-reels'; os.makedirs(tmp, exist_ok=True)
+        out = os.path.join(REPO, 'reels'); os.makedirs(out, exist_ok=True)
+        render(f'{tmp}/{name}_v.mp4', DUR, fn)
+        music(f'{tmp}/{name}.wav', DUR, seed=list(VIDEOS).index(name))
+        mux(f'{tmp}/{name}_v.mp4', f'{tmp}/{name}.wav', f'{out}/FTS-reel-{name}.mp4')
         print('done', name)
